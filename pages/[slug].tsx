@@ -7,25 +7,27 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Home: NextPage = () => {
   return (
-    <motion.div className={styles.container} exit={{ opacity: 0 }} initial={{x: -1000}} animate={{ x: 0 }}>
+    <div className={styles.container}>
       <Head>
         <title>twutter</title>
         <meta name="description" content="weekly project" />
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">twutter</a>
+            <Link href="/">
+          <a>post2</a>
+          </Link>
         </h1>
 
+
         <p className={styles.description}>
-          posts will be displayed here
+          posting shall be done here
         </p>
 
-      
         <div className={styles.grid}>
-          <Link href="post">
+        <Link href="post">
           <motion.a className={styles.card}
           whileHover={{scale:0.8 }}>
 
@@ -33,14 +35,10 @@ const Home: NextPage = () => {
             <p>attempts</p>
           </motion.a>
           </Link>
-
-          <Link href="">
-          <motion.a className={styles.card}
-          whileHover={{scale:0.8 }}>
-            <h2>Profile &rarr;</h2>
-            <p>prepare to be pixelated</p>
-          </motion.a>
-          </Link>
+          <a href="https://nextjs.org/learn" className={styles.card}>
+            <h2>Learn &rarr;</h2>
+            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          </a>
 
           <a
             href="https://github.com/vercel/next.js/tree/canary/examples"
@@ -60,7 +58,6 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
-        
       </main>
 
       <footer className={styles.footer}>
@@ -71,12 +68,11 @@ const Home: NextPage = () => {
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <Image src="/icon.png" alt="Icon png" width={40} height={40} />
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
-    </motion.div>
-
+    </div>
   )
 }
 
